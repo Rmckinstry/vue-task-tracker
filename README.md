@@ -1,4 +1,7 @@
 # vue-crash
+```
+Simple vue task tracker. Add, remove, and toggle reminder visual per task.
+```
 
 ## Project setup
 ```
