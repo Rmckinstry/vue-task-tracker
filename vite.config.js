@@ -12,5 +12,6 @@ export default defineConfig({
     define: {
         'process.env': {}
     },
-    base: '/'
+    // for github pages
+    base: '/vue-task-tracker/'
 })
