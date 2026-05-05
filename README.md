@@ -1,22 +1,26 @@
-# vue-crash
-```
+# vue-task-tracker
+
 Simple vue task tracker. Add, remove, and toggle reminder visual per task.
-```
 
 ## Project setup
-```
+```bash
 npm install
 ```
 
 ### Compiles and hot-reloads for development
-```
-npm run serve
+```bash
+npm run dev
 ```
 
 ### Compiles and minifies for production
-```
+```bash
 npm run build
 ```
 
+### Preview production build locally
+```bash
+npm run preview
+```
+
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Vite Configuration Reference](https://vitejs.dev).
