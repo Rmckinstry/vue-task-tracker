@@ -1,7 +1,3 @@
-<template>
-  <button @click="$emit('toggle-add-task')" :style="{background: color}" class="btn">{{ title }}</button>
-</template>
-
 <script>
 import { stringLiteral } from "@babel/types";
 
@@ -14,3 +10,7 @@ export default {
   },
 };
 </script>
+
+<template>
+  <button @click="$emit('toggle-add-task')" :style="{ background: color }" class="btn">{{ title }}</button>
+</template>

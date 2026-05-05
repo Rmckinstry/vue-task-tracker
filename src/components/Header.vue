@@ -1,26 +1,25 @@
-<template>
-  <header>
-    <h1>{{ title }}</h1>
-    <Button @toggle-add-task="$emit('toggle-add-task')" 
-            :title="showAddTaskValue ? 'Close' : 'AddTask'" 
-            :color="showAddTaskValue ? 'red' : 'green'" />
-  </header>
-</template>
-
 <script>
 import Button from "./Button.vue";
 export default {
   name: "Header",
-  props:{
+  props: {
     title: String,
     showAddTaskValue: Boolean,
   },
   components: {
     Button,
   },
-  emits:['toggle-add-task']
+  emits: ['toggle-add-task']
 };
 </script>
+
+<template>
+  <header>
+    <h1>{{ title }}</h1>
+    <Button @toggle-add-task="$emit('toggle-add-task')" :title="showAddTaskValue ? 'Close' : 'AddTask'"
+      :color="showAddTaskValue ? 'red' : 'green'" />
+  </header>
+</template>
 
 <style scoped>
 header {

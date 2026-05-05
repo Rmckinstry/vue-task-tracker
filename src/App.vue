@@ -1,26 +1,8 @@
-<template>
-  <div class="container">
-    <Header @toggle-add-task="toggleShowAddTask" 
-            title="Task Tracker" 
-            :showAddTaskValue = "showAddTask" />
-    
-            <div v-if="showAddTask">
-      <AddTask @add-task="addTask" />
-    </div>
-    
-    <Tasks @delete-task="deleteTask"
-           @toggle-reminder="toggleReminder" 
-           :tasks="tasks"/>
-  </div>
-</template>
-
 <script>
 
 import Header from './components/Header.vue'
 import Tasks from './components/Tasks.vue'
 import AddTask from './components/AddTask.vue'
-
-
 
 export default {
   name: "App",
@@ -29,28 +11,28 @@ export default {
     Tasks,
     AddTask,
   },
-  data(){
-    return{
+  data() {
+    return {
       tasks: [],
-      showAddTask:false,
+      showAddTask: false,
     }
   },
-  methods:{
+  methods: {
 
-    toggleShowAddTask(){
+    toggleShowAddTask() {
       this.showAddTask = !this.showAddTask
     },
-    
-    addTask(task){
+
+    addTask(task) {
       this.tasks = [...this.tasks, task]
     },
 
-    deleteTask(id){
-      if(confirm('Do you want to delete this task?')){
-        this.tasks =this.tasks.filter((task) => task.id !== id)
+    deleteTask(id) {
+      if (confirm('Do you want to delete this task?')) {
+        this.tasks = this.tasks.filter((task) => task.id !== id)
       }
     },
-    toggleReminder(id){
+    toggleReminder(id) {
       this.tasks.forEach(task => {
         if (task.id == id) {
           task.reminder = !task.reminder;
@@ -59,30 +41,42 @@ export default {
     },
 
   },
-  created(){
+  created() {
     this.tasks = [
       {
-        id:1,
-        text:"Doctors Appointment",
-        day:"March 1st at 2:30pm",
-        reminder:true
+        id: 1,
+        text: "Doctors Appointment",
+        day: "March 1st at 2:30pm",
+        reminder: true
       },
       {
-        id:2,
-        text:"Meeting at School",
-        day:"March 3rd at 1:30pm",
-        reminder:true
+        id: 2,
+        text: "Meeting at School",
+        day: "March 3rd at 1:30pm",
+        reminder: true
       },
       {
-        id:3,
-        text:"Food Shopping",
-        day:"March 3rd at 11:00 am",
-        reminder:false
+        id: 3,
+        text: "Food Shopping",
+        day: "March 3rd at 11:00 am",
+        reminder: false
       },
     ]
   }
 };
 </script>
+
+<template>
+  <div class="container">
+    <Header @toggle-add-task="toggleShowAddTask" title="Task Tracker" :showAddTaskValue="showAddTask" />
+
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
+
+    <Tasks @delete-task="deleteTask" @toggle-reminder="toggleReminder" :tasks="tasks" />
+  </div>
+</template>
 
 <style>
 * {
